@@ -7,6 +7,7 @@ import it.devle.EsercitazioneFinale.repository.ProdottoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -60,6 +61,15 @@ public class ProdottoRestController {
     public List<Prodotto> ricercaprodottoconprezzo(@RequestParam(name = "min") float min,
                                                 @RequestParam(name = "max") float max) {
         return repository.findByprezzoBetween(min, max);
+    }
+
+    @PostMapping ("/caricafile")
+    public  String caricaFile(@RequestParam ("file") MultipartFile file){
+        String infoFile= file.getOriginalFilename() + " - "+file.getContentType();
+        String conFormat = String.format("%S-%S", file.getOriginalFilename(),file.getContentType());
+        logger.info((infoFile));
+        logger.warn(conFormat);
+        return conFormat;
     }
 
 }
