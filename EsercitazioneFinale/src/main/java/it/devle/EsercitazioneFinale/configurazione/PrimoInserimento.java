@@ -29,9 +29,9 @@ public class PrimoInserimento {
             Date dataDiScadenzaP2=dateFormat.parse("26-04-2025");
             Date dataDiScadenzaP3=dateFormat.parse("14-11-2023");
 
-            Prodotto p1=new Prodotto("pasta",10,dataDiAcquistoP1,dataDiScadenzaP1,2.5);
-            Prodotto p2=new Prodotto("carne",15,dataDiAcquistoP2,dataDiScadenzaP2,4.5);
-            Prodotto p3=new Prodotto("acqua",2,dataDiAcquistoP3,dataDiScadenzaP3,1.5);
+            Prodotto p1=new Prodotto("pasta",10,dataDiAcquistoP1,dataDiScadenzaP1,2.5f);
+            Prodotto p2=new Prodotto("carne",15,dataDiAcquistoP2,dataDiScadenzaP2,4.5f);
+            Prodotto p3=new Prodotto("acqua",2,dataDiAcquistoP3,dataDiScadenzaP3,1.5f);
 
             List<Prodotto> prodotti=new ArrayList<>();
             prodotti.add(p1);
