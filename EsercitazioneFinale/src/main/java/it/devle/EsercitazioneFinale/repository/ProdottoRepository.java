@@ -7,13 +7,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-public interface ProdottoRepository extends JpaRepository<Prodotto,Long> {
+public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
 
-List<Prodotto> findBynome(String nome);
-
-
-    List<Prodotto> findByquantita(int quantita);
+    List<Prodotto> findAllBynome(String nome);
 
     List<Prodotto> findByprezzoBetween(float min, float max);
+
+    List<Prodotto> findAllByquantita(int quantita);
+
+    List<Prodotto> findByOrderByQuantita();
+
+    List<Prodotto> findBydatadiacquisto(Date data);
 }
 
