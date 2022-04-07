@@ -74,8 +74,7 @@ public class ProdottoRestController {
     public String caricaFile(@RequestParam("file") MultipartFile file) {
         String infoFile = file.getOriginalFilename() + " - " + file.getContentType();
         String conFormat = String.format("%S-%S", file.getOriginalFilename(), file.getContentType());
-        logger.info((infoFile));
-        logger.warn(conFormat);
+
         return conFormat;
     }
 
